@@ -1,40 +1,24 @@
 import React from 'react';
-import { Routes, Route, Link,Outlet,RouteObject,useRoutes } from "react-router-dom";
-import Post from './pages/post';
-import About from './pages/about';
-import NoMatch from './pages/noMatch';
+import { Link, useRoutes } from "react-router-dom";
+
+import routerConfig from './router';
 import './App.css';
-const routerConfig = [
-  {
-    path: "/",
-    element: <Outlet />,
-  },
-  {
-    path: "/post",
-    element: <Post />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "*",
-    element: <NoMatch />,
-  }
-]
 
 const App = () => {
-  const linkStyle = {
-    margin: "5px"
-  }
-  const element = useRoutes(routerConfig)
+  const router = useRoutes(routerConfig)
   return (
-    <div>
-      <h1>Welcome to React Router!</h1>
-      <Link to="about" style={linkStyle}>About</Link>
-      <Link to="post" style={linkStyle}>Post</Link>
-      <Link to="/" style={linkStyle}>Index</Link>
-      {element}
+    <div >
+      <div className="headerWarp">
+        <h1 className="titleName">單頁應用程式測試</h1>
+        <div>
+          <Link to="about" className="linkStyle">About</Link>
+          <Link to="post" className="linkStyle">Post</Link>
+          <Link to="/" className="linkStyle">Index</Link>
+        </div>
+      </div>
+      <hr />
+      {router}
+
     </div>
   );
 }

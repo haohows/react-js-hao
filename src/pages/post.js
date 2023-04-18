@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Edit from '../components/Edit';
 import List from '../components/List';
-import './post.css';
+import '../css/post.css';
 
 const Post = () => {
     return (

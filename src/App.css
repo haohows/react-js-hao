@@ -1,0 +1,15 @@
+
+.headerWarp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.headerWarp .titleName {
+    margin: 0;
+}
+
+.headerWarp .linkStyle {
+    margin: 0px 10px;
+}
